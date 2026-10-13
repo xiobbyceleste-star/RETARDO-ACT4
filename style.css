@@ -1,0 +1,194 @@
+
+/* Remove default spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main page */
+body {
+    min-height: 100vh;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8ebef;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f5f6fa;
+}
+
+/* Container for both business cards */
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    width: 100%;
+}
+
+/* Common card design */
+.business-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    width: min(540px, 100%);
+    min-height: 385px;
+    padding: 38px;
+    background: #171f30;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Green circle in the upper-right corner */
+.corner-circle {
+    position: absolute;
+    z-index: -1;
+    width: 300px;
+    height: 300px;
+    top: -155px;
+    right: -105px;
+    border-radius: 50%;
+    background: #08ad8b;
+}
+
+/* Business name */
+.business-name {
+    margin-bottom: 48px;
+    color: #08c49b;
+    font-size: clamp(19px, 3vw, 30px);
+    letter-spacing: 4px;
+    font-weight: 400;
+}
+
+/* Owner's name */
+.identity h1,
+.identity h2 {
+    font-size: clamp(36px, 5vw, 48px);
+    line-height: 1.15;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+/* Job title */
+.role {
+    margin-top: 10px;
+    color: #aeb6c5;
+    font-size: 22px;
+}
+
+/* Horizontal divider */
+.divider {
+    height: 2px;
+    width: 100%;
+    margin: 28px 0 30px;
+    background: #384153;
+}
+
+/* Contact information */
+.contact-list {
+    display: grid;
+    gap: 16px;
+    color: #c4cad4;
+    font-size: 20px;
+    overflow-wrap: anywhere;
+}
+
+/* Green labels */
+.contact-list span {
+    color: #08c49b;
+}
+
+/* Back card */
+.back {
+    min-height: 398px;
+}
+
+/* Back card owner information */
+.back .identity {
+    margin-top: 6px;
+}
+
+/* Back card divider spacing */
+.back .divider {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+/* Contact details and QR code layout */
+.back-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+/* Back card contact information */
+.back-contacts {
+    gap: 26px;
+    font-size: 18px;
+    line-height: 1.5;
+    padding-top: 8px;
+}
+
+/* QR code white container */
+.qr-box {
+    flex: 0 0 132px;
+    padding: 10px 10px 8px;
+    border-radius: 18px;
+    background: #ffffff;
+    color: #171f30;
+    text-align: center;
+}
+
+/* QR code image */
+.qr-box img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+
+/* Scan Me text */
+.qr-box p {
+    margin-top: 5px;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 520px) {
+
+    body {
+        padding: 16px;
+    }
+
+    .business-card {
+        padding: 26px;
+        min-height: auto;
+    }
+
+    .business-name {
+        margin-bottom: 38px;
+        letter-spacing: 3px;
+    }
+
+    .contact-list {
+        font-size: 16px;
+    }
+
+    .role {
+        font-size: 19px;
+    }
+
+    .back-content {
+        gap: 12px;
+    }
+
+    .back-contacts {
+        font-size: 14px;
+    }
+
+    .qr-box {
+        flex-basis: 112px;
+    }
+}
